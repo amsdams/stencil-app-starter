@@ -11,11 +11,16 @@
   },
   "dependencies": {
     "@stencil/core": "^0.11.0",
-    "@stencil/router": "^0.2.5"
+    "@stencil/router": "^0.2.5",
+    "@types/selenium-webdriver": "^3.0.10",
+    "request": "^2.87.0"
   },
   "devDependencies": {
     "@types/jest": "^23.3.1",
-    "jest": "^23.4.2"
+    "chromedriver": "^2.41.0",
+    "geckodriver": "^1.12.1",
+    "jest": "^23.4.2",
+    "selenium-webdriver": "^3.6.0"
   },
   "repository": {
     "type": "git",
@@ -31,6 +36,8 @@
     "transform": {
       "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"
     },
+    "verbose": true,
+    "testURL": "http://localhost:3333/",
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
     "moduleFileExtensions": [
       "ts",
