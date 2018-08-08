@@ -25,8 +25,10 @@ declare global {
   interface HTMLAttributes {}
 }
 
+import '@ionic/core';
 import '@stencil/router';
 import '@stencil/state-tunnel';
+import 'ionicons';
 
 import {
   MatchResults,
