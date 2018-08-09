@@ -33,7 +33,7 @@ describe('app-profile', () => {
       };
 
       await testWindow.flush();
-      expect(element.textContent).toEqual(
+      expect(element.querySelector('.app-profile>p').textContent).toEqual(
         'Hello! My name is stencil. My name was passed in through a route param!'
       );
     });
