@@ -31,12 +31,15 @@ import '@stencil/state-tunnel';
 import {
   MatchResults,
 } from '@stencil/router';
+import {
+  Model200,
+} from './services/model/weather/models';
 
 declare global {
 
   namespace StencilComponents {
     interface AppHome {
-
+      'defaultQ': string;
     }
   }
 
@@ -59,7 +62,7 @@ declare global {
   }
   namespace JSXElements {
     export interface AppHomeAttributes extends HTMLAttributes {
-
+      'defaultQ'?: string;
     }
   }
 }
@@ -126,6 +129,73 @@ declare global {
   namespace JSXElements {
     export interface AppRootAttributes extends HTMLAttributes {
 
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface AppWeatherQuery {
+      'defaultQ': string;
+    }
+  }
+
+  interface HTMLAppWeatherQueryElement extends StencilComponents.AppWeatherQuery, HTMLStencilElement {}
+
+  var HTMLAppWeatherQueryElement: {
+    prototype: HTMLAppWeatherQueryElement;
+    new (): HTMLAppWeatherQueryElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-weather-query': HTMLAppWeatherQueryElement;
+  }
+  interface ElementTagNameMap {
+    'app-weather-query': HTMLAppWeatherQueryElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-weather-query': JSXElements.AppWeatherQueryAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppWeatherQueryAttributes extends HTMLAttributes {
+      'defaultQ'?: string;
+      'onQChanged'?: (event: CustomEvent) => void;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface AppWeatherResult {
+      'weather': Model200;
+    }
+  }
+
+  interface HTMLAppWeatherResultElement extends StencilComponents.AppWeatherResult, HTMLStencilElement {}
+
+  var HTMLAppWeatherResultElement: {
+    prototype: HTMLAppWeatherResultElement;
+    new (): HTMLAppWeatherResultElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-weather-result': HTMLAppWeatherResultElement;
+  }
+  interface ElementTagNameMap {
+    'app-weather-result': HTMLAppWeatherResultElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-weather-result': JSXElements.AppWeatherResultAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppWeatherResultAttributes extends HTMLAttributes {
+      'weather'?: Model200;
     }
   }
 }
